@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Saison from "./Saison_image";
-import CountFavoris from "./CountFavoris";
 
 function Article() {
   const [episode, setEpisode] = useState(null);
@@ -31,7 +30,6 @@ function Article() {
       {episode && (
         <>
           <Saison episode={episode} />
-          <CountFavoris />
         </>
       )}
     </>

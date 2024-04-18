@@ -6,11 +6,11 @@ function CountFavoris({ change }) {
       <p
         style={{
           color: "white",
-          position: "fixed",
-          top: 0,
+          position: "absolute",
+          top: "30%",
           right: 0,
           zIndex: 2,
-          fontSize: "2em",
+          fontSize: "10em",
         }}
       >
         {change}

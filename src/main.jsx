@@ -8,7 +8,11 @@ import Article from "./API/Article.jsx";
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    element: (
+      <>
+        <App />
+      </>
+    ),
 
     children: [
       {
@@ -21,7 +25,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/episode/:id",
+        path: "/episode/:id/:change/",
         element: (
           <>
             {" "}

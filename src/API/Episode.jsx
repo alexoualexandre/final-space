@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import "./../Css/Episode.css";
+import CountFavoris from "./CountFavoris";
+
+
 
 function Episode() {
-  const { id } = useParams();
+  const { id,change } = useParams();
   return (
     <>
-      <p>coucou{id} </p>
+      <p>coucou{id}</p>
+      <CountFavoris change={change} /> 
+      
     </>
   );
 }

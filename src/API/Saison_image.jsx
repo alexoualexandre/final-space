@@ -1,24 +1,24 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./../Css/Chapter.css";
-import CountFavoris from "./CountFavoris";
 import { useState } from "react";
 
 function Saison({ episode }) {
   const limit = episode;
   const [change, setChange] = useState(0);
-
+  
   return (
     <>
       <div className="flex" key={0}>
-      <CountFavoris change={change} />
+        
         {limit.slice(0, 10).map((obj) => {
           return (
             <>
+            
               <div className="chapter" key={obj.id}>
                 {obj.name}
-
-                <Link to={`/episode/${obj.id}`}>
+                
+                <Link to={`/episode/${obj.id}/${change}`}>
                   <img src={obj.img_url} className="img_chapter" />
                 </Link>
                 <button
@@ -31,8 +31,6 @@ function Saison({ episode }) {
                     src="./../src/Images/OIG4.jfif"
                   />{" "}
                 </button>
-
-                
               </div>
             </>
           );
@@ -40,6 +38,7 @@ function Saison({ episode }) {
       </div>
     </>
   );
+  
 }
 Saison.propTypes = {
   episode: PropTypes.shape({

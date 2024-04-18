@@ -1,16 +1,14 @@
 import "./../Css/Header.css";
-import CountFavoris from "./CountFavoris";
 
 function Header() {
   return (
     <>
       <header>
         <img
-          src="./../src/Images/image-header.jpg"
+          src="https://cdn.akamai.steamstatic.com/steam/apps/1867580/capsule_616x353.jpg?t=1678834698"
           alt="not-found"
           className="img-header"
         />
-        <CountFavoris />
       </header>
     </>
   );
