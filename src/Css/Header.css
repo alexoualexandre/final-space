@@ -1,0 +1,9 @@
+.img-header {
+  width: 100%;
+  height: 7.5em;
+  border-top: 5px solid #5f233f;
+  border-bottom: 5px solid #5f233f;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
