@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./../Css/Chapter.css";
-import { useState } from "react";
+import { useEpisodeFavoris } from "../Context/FavorieContext";
+
 
 function Saison({ episode }) {
   const limit = episode;
-  const [change, setChange] = useState(0);
-  
+  const { numeroEpisodeEnFavvorisDansContexte, setNumeroEpisode} = useEpisodeFavoris();
   return (
     <>
       <div className="flex" key={0}>
@@ -18,13 +18,13 @@ function Saison({ episode }) {
               <div className="chapter" key={obj.id}>
                 {obj.name}
                 
-                <Link to={`/episode/${obj.id}/${change}`}>
+                <Link to={`/episode/${obj.id}/${numeroEpisodeEnFavvorisDansContexte}`}>
                   <img src={obj.img_url} className="img_chapter" />
                 </Link>
                 <button
                   type="button"
                   className="button-favorie"
-                  onClick={() => setChange(obj.id)}
+                  onClick={() => {setNumeroEpisode(obj.id);}}
                 >
                   <img
                     className="image-favorie"
@@ -41,10 +41,6 @@ function Saison({ episode }) {
   
 }
 Saison.propTypes = {
-  episode: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    img_url: PropTypes.string.isRequired,
-  }),
+  episode: PropTypes.array,
 };
 export default Saison;
