@@ -1,20 +1,25 @@
 import { createContext, useState, useContext } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  
-  const [numeroEpisodeEnFavvorisDansContexte, setNumeroEpisode] = useState(0);
-  const [episode, setEpisode] = useState(0);
+  const [numeroEpisodeEnFavvorisDansContexte, setNumeroEpisode] = useState([]);
+
+  // console.log(numeroEpisodeEnFavvorisDansContexte)
 
   return (
-    <ThemeContext.Provider value={{ numeroEpisodeEnFavvorisDansContexte, setNumeroEpisode, episode, setEpisode }}>
+    <ThemeContext.Provider
+      value={{ numeroEpisodeEnFavvorisDansContexte, setNumeroEpisode }}
+    >
       {children}
     </ThemeContext.Provider>
   );
 }
-ThemeProvider.propTypes={
-  children: PropTypes.array.isRequired,
-}
+ThemeProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
 export const useEpisodeFavoris = () => useContext(ThemeContext);

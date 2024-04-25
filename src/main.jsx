@@ -4,6 +4,7 @@ import "./Css/Index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Episode from "./API/Episode.jsx";
 import Article from "./API/Article.jsx";
+import Favories from "./API/Favories.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,12 +25,20 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/episode/:id/:change/",
+        path: "/episode/:id/",
         element: (
           <>
             {" "}
-
             <Episode />
+          </>
+        ),
+      },
+      {
+        path: "/Favories",
+        element: (
+          <>
+            {" "}
+            <Favories />
           </>
         ),
       },

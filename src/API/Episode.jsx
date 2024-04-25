@@ -32,7 +32,7 @@ function Episode() {
       {episode && (
         <div className="flex" key={0}>
           <div className="chapter" key={id}>
-            <img src={episode[id-1].img_url} className="img_chapter"/>
+            <img src={episode[id - 1].img_url} className="img_chapter" />
           </div>
         </div>
       )}

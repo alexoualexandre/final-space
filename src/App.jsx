@@ -28,10 +28,10 @@ function App() {
   });
   return (
     <>
-    <ThemeProvider>
-      <Header />
-      <Outlet />
-    </ThemeProvider>
+      <ThemeProvider>
+        <Header />
+        <Outlet />
+      </ThemeProvider>
     </>
   );
 }
